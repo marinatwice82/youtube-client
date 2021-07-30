@@ -1,0 +1,23 @@
+.search {
+    width: 50%;
+    height: 50%;
+    border: 1px solid red;
+}
+.btn-logo {
+    width: 50px;
+    height: 37px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #2F80ED;
+    border-radius: 10px;
+    border: none;
+}
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 20px solid white;
+    border-bottom: 10px solid transparent;
+}
