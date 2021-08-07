@@ -1,11 +1,15 @@
 .main {
     width: 1440px;
-    height: auto;
+   // height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
     border: 1px solid red;
 }
 .example-card {
     width: 263px;
-    height: 327px;
+   // height: auto;
+    margin: 1% 0 1% 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -19,20 +23,21 @@
 }
 .card-header{
     width: 100%;
-    height: 80%;
+    height: auto;
+    //margin-bottom: 1%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     border: 1px solid blue;
         mat-card-title{
-            width: 223px;
-            //height: 23px;
+            width: 100%;
+            height: auto;
             font-weight: bold;
             font-size: 20px;
             line-height: 23px;
             text-align: right;
             color: #4F4F4F;
-            border: 1px solid blue;
+            border: 1px solid green;
         }
         
 }
@@ -40,7 +45,6 @@
     width: 100%;
     height: auto;
     border: 1px solid red;
-
 }
 .card-icons {
     width: 100%;

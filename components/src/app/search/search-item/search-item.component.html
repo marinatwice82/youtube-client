@@ -1,23 +1,24 @@
-<section class="main" >
-<ng-container *ngIf="result?.length != 0">
-  <mat-card class="example-card" *ngFor = "let item of result">
-    <div class="card-header">
-      <img mat-card-image src={{item.img}} alt="Photo of a Shiba Inu">
-      <mat-card-content class="card-icons">
-        <div><img src="./assets/viewed.svg" alt="icon"/><span>{{item.viewCount}}</span></div>
-        <div><img src="./assets/liked.svg" alt="icon"/><span>{{item.likeCount}}</span></div>
-        <div><img src="./assets/dislike.svg" alt="icon"/><span>{{item.dislikeCount}}</span></div>
-        <div><img src="./assets/сomments.svg" alt="icon"/><span>{{item.commentCount}}</span></div>
-      </mat-card-content>
-      <mat-card-title>{{item.title}}</mat-card-title>
-    </div>
-    <mat-card-actions>
-      <button mat-button>more...</button>
-    </mat-card-actions>
-  </mat-card>
+<section class="main">
+  <ng-container *ngIf="result?.length != 0">
+    <mat-card class="example-card" *ngFor="let item of result">
+      <div class="card-header">
+        <img mat-card-image src={{item.img}} alt="Photo of a Shiba Inu">
+        <mat-card-content class="card-icons">
+          <div><img src="./assets/viewed.svg" alt="icon" /><span>{{item.viewCount}}</span></div>
+          <div><img src="./assets/liked.svg" alt="icon" /><span>{{item.likeCount}}</span></div>
+          <div><img src="./assets/dislike.svg" alt="icon" /><span>{{item.dislikeCount}}</span></div>
+          <div><img src="./assets/сomments.svg" alt="icon" /><span>{{item.commentCount}}</span></div>
+        </mat-card-content>
+        <mat-card-title>{{item.title}}</mat-card-title>
+        <mat-card-title>{{item.publishedAt}}</mat-card-title>
+      </div>
+      <mat-card-actions>
+        <button mat-button>more...</button>
+      </mat-card-actions>
+    </mat-card>
 
-</ng-container>
-  
+  </ng-container>
+
 
 
   <!--
@@ -36,5 +37,5 @@
           <button mat-button>more...</button>
         </mat-card-actions>
       </mat-card>
-    --> 
+    -->
 </section>

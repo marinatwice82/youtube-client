@@ -9,9 +9,9 @@
 </head>
 
 <body>
-  <app-header (clickSearch) = "clickSearch($event)"></app-header>
-  <app-filter></app-filter>
-  <app-search-item [result] = "result"></app-search-item>
+  <app-header (clickSearch)="clickSearch($event)"></app-header>
+  <app-filter (filterDate)="filterDate()"></app-filter>
+  <app-search-item [result]="result"></app-search-item>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { EXP } from './mock-exp-items';
 import { SearchItem } from './search/search-item.model';
 
@@ -10,15 +10,17 @@ import { SearchItem } from './search/search-item.model';
 })
 export class AppComponent {
   title = 'components';
+  isFilterDate: boolean = true;
   public result: SearchItem[] = [];
-  clickSearch(form: NgForm){
+
+  clickSearch(form: NgForm) {
     //console.log("Main Component ", form.value.search);
     //console.log("EXP ", EXP[0].snippet.title);
     this.result = [];
-    
-    EXP.map((item)=>{
-      const str = item.snippet.title; 
-      if(str.toLowerCase().includes(form.value.search.toLowerCase())){
+
+    EXP.map((item) => {
+      const str = item.snippet.title;
+      if (str.toLowerCase().includes(form.value.search.toLowerCase())) {
         this.result.push({
           kind: item.kind,
           etag: item.etag,
@@ -28,11 +30,45 @@ export class AppComponent {
           viewCount: item.statistics.viewCount,
           likeCount: item.statistics.likeCount,
           dislikeCount: item.statistics.dislikeCount,
-          commentCount: item.statistics.commentCount
+          commentCount: item.statistics.commentCount,
+          publishedAt: item.snippet.publishedAt
         });
       }
     });
-    
-    console.log('Res ', this.result);
+
+    //console.log('Res ', this.result);
+  }
+
+  filterDate() {
+    this.isFilterDate = !this.isFilterDate;
+    if (this.isFilterDate) {
+      this.result.reverse();
+    }
+    else {
+      console.log('isFilterDate ', this.isFilterDate);
+      let arrStr = this.result[0].publishedAt.split('T');
+      let date = arrStr[0].split('-');
+      console.log('arrStr ', date);
+      this.result.sort((a, b): number => {
+        let arrStrA = a.publishedAt.split('T');
+        let dateA = arrStrA[0].split('-');
+        let arrStrB = b.publishedAt.split('T');
+        let dateB = arrStrB[0].split('-');
+        if (parseInt(dateA[0]) > parseInt(dateB[0])) {
+          return -1
+
+        }
+        else if (parseInt(dateA[0]) == parseInt(dateB[0]) && parseInt(dateA[1]) > parseInt(dateB[1])) {
+          return -1
+
+        }
+        else if (parseInt(dateA[1]) == parseInt(dateB[1]) && parseInt(dateA[2]) > parseInt(dateB[2])) {
+          return -1
+
+        }
+        else { return 0 }
+      });
+    }
+
   }
 }
