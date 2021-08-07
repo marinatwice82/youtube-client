@@ -6,6 +6,8 @@ import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from './material/material.module';
 import { SearchItemComponent } from './search/search-item/search-item.component';
 import { SearchResultsComponent } from './search/search-results/search-results.component';
+import { FilterComponent } from './filter/filter.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,11 +17,13 @@ import { SearchResultsComponent } from './search/search-results/search-results.c
     HeaderComponent,
     SearchResultsComponent,
     SearchItemComponent,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule],
+    MaterialModule,
+    FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
