@@ -5,10 +5,9 @@ body {
 }
 .main {
     width: 1440px;
-   // height: auto;
+    height: auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    border: 1px solid red;
 }
 

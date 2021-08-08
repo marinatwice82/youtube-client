@@ -7,11 +7,9 @@
     justify-content: space-around;
     align-items: center;
     background: #E5E5E5;
-    
     font-family: Roboto;
     font-style: normal;
-    border: 1px solid red;
-    border-bottom: 5px solid blue;
+    border-bottom: 5px solid #E5E5E5;
 }
 .card-header{
     width: 100%;
@@ -20,7 +18,6 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    border: 1px solid blue;
         mat-card-title{
             width: 100%;
             height: auto;
@@ -29,7 +26,6 @@
             line-height: 23px;
             text-align: right;
             color: #4F4F4F;
-            border: 1px solid green;
         }
         
 }
@@ -45,7 +41,6 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid red;
         img{
             margin-right: 5px;
         }

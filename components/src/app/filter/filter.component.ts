@@ -9,6 +9,7 @@ export class FilterComponent implements OnInit {
 
   constructor() { }
   ngOnInit(): void {
+    //throw new Error('Method not implemented.');
   }
   public value: string = '';
   @Output() filterDate = new EventEmitter<void>();

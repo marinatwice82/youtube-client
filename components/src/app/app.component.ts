@@ -81,13 +81,14 @@ export class AppComponent {
   }
 
   filterWord(value: string) {
+    //console.log('filterWord ', value);
     this.result.sort((a, b): number => {
       //str.toLowerCase().includes(form.value.search.toLowerCase()
       if (a.title.toLowerCase().includes(value)) return -1
       else if (b.title.toLowerCase().includes(value)) return 1
       else return 0
     });
-    //console.log('filterWord ', value);
+    
   }
 
   clickFilter() {

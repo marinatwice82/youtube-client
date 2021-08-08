@@ -12,7 +12,7 @@
   <app-header (clickFilter)="clickFilter()" (clickSearch) = "clickSearch($event)"></app-header>
   <app-filter *ngIf="showFilter" (filterDate)="filterDate()" (filterViews)="filterViews()" (filterWord)="filterWord($event)"></app-filter>
   <section class="main">
-    <ng-container *ngIf="result?.length != 0">
+    <ng-container *ngIf="result?.length !== 0">
       <app-search-item *ngFor="let item of result" [item]="item"></app-search-item>
     </ng-container>
   </section>
