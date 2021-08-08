@@ -9,9 +9,13 @@
 </head>
 
 <body>
-  <app-header (clickSearch)="clickSearch($event)"></app-header>
-  <app-filter (filterDate)="filterDate()"></app-filter>
-  <app-search-item [result]="result"></app-search-item>
+  <app-header (clickFilter)="clickFilter()" (clickSearch) = "clickSearch($event)"></app-header>
+  <app-filter *ngIf="showFilter" (filterDate)="filterDate()" (filterViews)="filterViews()" (filterWord)="filterWord($event)"></app-filter>
+  <section class="main">
+    <ng-container *ngIf="result?.length != 0">
+      <app-search-item *ngFor="let item of result" [item]="item"></app-search-item>
+    </ng-container>
+  </section>
 </body>
 
 </html>

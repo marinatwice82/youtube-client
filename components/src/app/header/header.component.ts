@@ -18,6 +18,13 @@ export class HeaderComponent implements OnInit {
   search(form: NgForm) {
       this.clickSearch.emit(form);
   }
+  
+  @Output() clickFilter = new EventEmitter<void>();
+
+  openFilter() {
+    this.clickFilter.emit();
+
+  }
 /*
   search(form: NgForm): void{
     console.log("Click Form ", form.value.search);

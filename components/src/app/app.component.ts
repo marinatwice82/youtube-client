@@ -11,6 +11,9 @@ import { SearchItem } from './search/search-item.model';
 export class AppComponent {
   title = 'components';
   isFilterDate: boolean = true;
+  isFilterViews: boolean = true;
+  showFilter: boolean = false;
+  //isFilterDate: boolean = true;
   public result: SearchItem[] = [];
 
   clickSearch(form: NgForm) {
@@ -56,19 +59,38 @@ export class AppComponent {
         let dateB = arrStrB[0].split('-');
         if (parseInt(dateA[0]) > parseInt(dateB[0])) {
           return -1
-
         }
         else if (parseInt(dateA[0]) == parseInt(dateB[0]) && parseInt(dateA[1]) > parseInt(dateB[1])) {
           return -1
-
         }
         else if (parseInt(dateA[1]) == parseInt(dateB[1]) && parseInt(dateA[2]) > parseInt(dateB[2])) {
           return -1
-
         }
         else { return 0 }
       });
     }
 
+  }
+
+  filterViews() {
+    this.isFilterViews = !this.isFilterViews;
+    this.result.sort((a, b): number => {
+      if (this.isFilterViews) return parseInt(a.viewCount) - parseInt(b.viewCount)
+      else return parseInt(b.viewCount) - parseInt(a.viewCount)
+    });
+  }
+
+  filterWord(value: string) {
+    this.result.sort((a, b): number => {
+      //str.toLowerCase().includes(form.value.search.toLowerCase()
+      if (a.title.toLowerCase().includes(value)) return -1
+      else if (b.title.toLowerCase().includes(value)) return 1
+      else return 0
+    });
+    //console.log('filterWord ', value);
+  }
+
+  clickFilter() {
+    this.showFilter = !this.showFilter;
   }
 }
