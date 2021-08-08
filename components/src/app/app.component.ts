@@ -20,25 +20,27 @@ export class AppComponent {
     //console.log("Main Component ", form.value.search);
     //console.log("EXP ", EXP[0].snippet.title);
     this.result = [];
+    //console.log("EXP ", EXP.items);
 
-    EXP.map((item) => {
-      const str = item.snippet.title;
+    
+    EXP.items.map((elem) => {
+      const str = elem.snippet.title;
       if (str.toLowerCase().includes(form.value.search.toLowerCase())) {
         this.result.push({
-          kind: item.kind,
-          etag: item.etag,
-          id: item.id,
-          title: item.snippet.title,
-          img: item.snippet.thumbnails.standard.url,
-          viewCount: item.statistics.viewCount,
-          likeCount: item.statistics.likeCount,
-          dislikeCount: item.statistics.dislikeCount,
-          commentCount: item.statistics.commentCount,
-          publishedAt: item.snippet.publishedAt
+          kind: elem.kind,
+          etag: elem.etag,
+          id: elem.id,
+          title: elem.snippet.title,
+          img: elem.snippet.thumbnails.standard.url,
+          viewCount: elem.statistics.viewCount,
+          likeCount: elem.statistics.likeCount,
+          dislikeCount: elem.statistics.dislikeCount,
+          commentCount: elem.statistics.commentCount,
+          publishedAt: elem.snippet.publishedAt
         });
       }
     });
-
+    
     //console.log('Res ', this.result);
   }
 
@@ -48,10 +50,10 @@ export class AppComponent {
       this.result.reverse();
     }
     else {
-      console.log('isFilterDate ', this.isFilterDate);
+      //console.log('isFilterDate ', this.isFilterDate);
       let arrStr = this.result[0].publishedAt.split('T');
       let date = arrStr[0].split('-');
-      console.log('arrStr ', date);
+      //console.log('arrStr ', date);
       this.result.sort((a, b): number => {
         let arrStrA = a.publishedAt.split('T');
         let dateA = arrStrA[0].split('-');

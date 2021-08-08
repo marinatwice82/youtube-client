@@ -17,9 +17,9 @@ export class SearchItemComponent implements OnInit {
     let currentDate = new Date();
     let itemDate = new Date(this.item.publishedAt);
     let daysLag = Math.ceil(Math.abs(currentDate.getTime() - itemDate.getTime()) / (1000 * 3600 * 24));
-    console.log("daysLag ", daysLag);
     if (daysLag < 7) this.borderColor = '5px solid blue';
     if (daysLag < 30 && daysLag > 7) this.borderColor = '5px solid green';
+    if (daysLag > 30 && daysLag < 180) this.borderColor = '5px solid yellow';
     if (daysLag > 180) this.borderColor = '5px solid red';
   }
 
