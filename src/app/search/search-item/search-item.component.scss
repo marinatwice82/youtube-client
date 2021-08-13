@@ -1,7 +1,8 @@
+
 .example-card {
     width: 263px;
     height: 400px;
-    margin: 5% 0 5% 0;
+    margin: 1% 0 1% 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -9,12 +10,10 @@
     background: #E5E5E5;
     font-family: Roboto;
     font-style: normal;
-    border-bottom: 5px solid #E5E5E5;
 }
 .card-header{
     width: 100%;
     height: auto;
-    //margin-bottom: 1%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -27,12 +26,10 @@
             text-align: right;
             color: #4F4F4F;
         }
-        
 }
 .mat-card-image{
     width: 100%;
     height: auto;
-    border: 1px solid red;
 }
 .card-icons {
     width: 100%;
