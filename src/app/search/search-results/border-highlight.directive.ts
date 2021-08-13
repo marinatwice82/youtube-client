@@ -1,9 +1,9 @@
-import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appBorderHighlight]'
 })
-export class BorderHighlightDirective {
+export class BorderHighlightDirective implements OnInit {
   @Input() publishedAt = '';
 
   constructor(private element: ElementRef, private renderer: Renderer2) {

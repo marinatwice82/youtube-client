@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 
@@ -7,12 +7,10 @@ import { NgForm } from '@angular/forms';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   constructor() { }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+
 
   @Output() clickSearch = new EventEmitter<NgForm>();
   search(form: NgForm) {

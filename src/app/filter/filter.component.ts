@@ -1,15 +1,14 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss']
 })
-export class FilterComponent implements OnInit {
+export class FilterComponent {
 
   constructor() { }
-  ngOnInit(): void {
-  }
+
   public value: string = '';
   @Output() filterDate = new EventEmitter<void>();
   @Output() filterViews = new EventEmitter<void>();
