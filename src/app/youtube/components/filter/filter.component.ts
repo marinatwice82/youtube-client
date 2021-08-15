@@ -27,7 +27,7 @@ export class FilterComponent {
     this.filterService.filterDate();
   }
   onViews() {
-    this.filterViews.emit();
+    this.filterService.filterView();
   }
 
   onWord(value: string) {

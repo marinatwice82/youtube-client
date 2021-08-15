@@ -13,12 +13,13 @@ export class SearchResultComponent implements OnInit {
   //@Input() searchString: string = '';
   //@Input() searchClicked: boolean = false;
   //@Input() isFilterDate: boolean = false;
-  @Input() isFilterViews: boolean = false;
+  //@Input() isFilterViews: boolean = false;
   @Input() sortString: string = '';
 
   public searchString: string = '';
   public searchClicked: boolean = false;
   public isFilterDate: boolean = false;
+  public isFilterViews: boolean = false;
 
   result: SearchItem[] = [];
   //result: any[] = EXP;
@@ -30,6 +31,9 @@ export class SearchResultComponent implements OnInit {
     });
     this.filterService.dateFiltering.subscribe(dateDirection => {
       this.isFilterDate = dateDirection;
+    });
+    this.filterService.viewFiltering.subscribe(viewDirection => {
+      this.isFilterViews = viewDirection;
     });
   }
 
