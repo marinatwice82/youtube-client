@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { DataService } from 'src/app/core/services/data.service';
+import { FilterService } from '../../services/filter.service';
 
 @Component({
   selector: 'app-filter',
@@ -9,7 +10,7 @@ import { DataService } from 'src/app/core/services/data.service';
 export class FilterComponent {
   public isShow: boolean = false;
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private filterService: FilterService) {
     this.dataService.clickChange.subscribe(show => {
       this.isShow = show;
       console.log("isShow ", this.isShow);
@@ -22,7 +23,8 @@ export class FilterComponent {
   @Output() filterWord = new EventEmitter<string>();
 
   onDate() {
-    this.filterDate.emit();
+    //this.filterDate.emit();
+    this.filterService.filterDate();
   }
   onViews() {
     this.filterViews.emit();

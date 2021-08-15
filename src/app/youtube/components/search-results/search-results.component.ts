@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from 'src/app/core/services/data.service';
 import { EXP } from '../../../mock-exp-items';
 import { SearchItem } from '../../models/search-item.model';
+import { FilterService } from '../../services/filter.service';
 
 @Component({
   selector: 'app-search-result',
@@ -11,20 +12,24 @@ import { SearchItem } from '../../models/search-item.model';
 export class SearchResultComponent implements OnInit {
   //@Input() searchString: string = '';
   //@Input() searchClicked: boolean = false;
-  @Input() isFilterDate: boolean = false;
+  //@Input() isFilterDate: boolean = false;
   @Input() isFilterViews: boolean = false;
   @Input() sortString: string = '';
 
   public searchString: string = '';
   public searchClicked: boolean = false;
+  public isFilterDate: boolean = false;
 
   result: SearchItem[] = [];
   //result: any[] = EXP;
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private filterService: FilterService) {
     this.dataService.onSearch.subscribe(searchStr => {
       this.searchClicked = true;
       this.searchString = searchStr;
       console.log('searchString ', this.searchString);
+    });
+    this.filterService.dateFiltering.subscribe(dateDirection => {
+      this.isFilterDate = dateDirection;
     });
   }
 
