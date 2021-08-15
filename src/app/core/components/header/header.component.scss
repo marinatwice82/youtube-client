@@ -12,27 +12,6 @@ header{
     justify-content: space-between;
     align-items: center;
 }
-/*.btn-logo {
-    width: 50px;
-    height: 37px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #2F80ED;
-    border-radius: 10px;
-    border: none;
-    &:hover {
-        cursor: pointer;
-    }
-}
-.triangle {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-left: 20px solid white;
-    border-bottom: 10px solid transparent;
-}*/
 .logo {
     width: 50px;
     height: 38px;
@@ -59,6 +38,8 @@ header{
             align-items: center;
             border-radius: 0 5px 5px 0;
             background-color: #2F80ED;
+            color: white;
+            border: none;
         }
 }
 .btn-setting{
