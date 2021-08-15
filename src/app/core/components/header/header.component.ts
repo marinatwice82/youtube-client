@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/auth/services/login.service';
+import { DataService } from '../../services/data.service';
 
 
 @Component({
@@ -10,10 +12,10 @@ import { LoginService } from 'src/app/auth/services/login.service';
 })
 export class HeaderComponent implements OnInit {
   public show!: boolean;
-  public userName: string | undefined;
+  public userName: string | undefined = 'Your Name';
 
 
-  constructor(private router: Router, private loginService: LoginService) { }
+  constructor(private router: Router, private loginService: LoginService, private dataService: DataService) { }
 
   public logout(): void {
     this.loginService.logout();
@@ -24,19 +26,24 @@ export class HeaderComponent implements OnInit {
     //this.loginService.currentLoginState.subscribe((data) => { this.show = data; });
     if (localStorage.getItem('status') === 'loggedin') {
       //this.show = "true";
-      this.userName = 'Hello, ' + localStorage.user;
+      this.userName = localStorage.user;
     }
   }
   /* @Output() clickSearch = new EventEmitter<NgForm>();
-   search(form: NgForm) {
-     this.clickSearch.emit(form);
-   }
+
    @Output() clickFilter = new EventEmitter<void>();
+*/
+  public search(form: NgForm): void {
+    this.dataService.searchClicked(form.value.search);
+    //console.log('search ', form.value.search);
+    //this.clickSearch.emit(form);
+  }
+  public openFilter(): void {
+    this.dataService.onClicked();
 
-   openFilter() {
-     this.clickFilter.emit();
+  }
 
-   }*/
+
   /*
     search(form: NgForm): void{
       console.log("Click Form ", form.value.search);

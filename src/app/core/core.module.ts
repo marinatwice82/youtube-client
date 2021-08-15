@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 
@@ -9,7 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
     HeaderComponent
   ],
   imports: [
-    RouterModule,
+    RouterModule, FormsModule
 
   ],
   exports: [

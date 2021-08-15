@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { DataService } from 'src/app/core/services/data.service';
 
 @Component({
   selector: 'app-filter',
@@ -6,8 +7,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent {
+  public isShow: boolean = false;
 
-  constructor() { }
+  constructor(private dataService: DataService) {
+    this.dataService.clickChange.subscribe(show => {
+      this.isShow = show;
+      console.log("isShow ", this.isShow);
+    });
+  }
 
   public value: string = '';
   @Output() filterDate = new EventEmitter<void>();
