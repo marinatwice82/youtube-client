@@ -6,6 +6,7 @@ import { SearchItem } from '../../models/search-item.model';
   templateUrl: './search-item.component.html',
   styleUrls: ['./search-item.component.scss']
 })
+
 export class SearchItemComponent {
 
   @Input() item!: SearchItem;

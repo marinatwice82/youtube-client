@@ -8,27 +8,16 @@ import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent
-    /*HeaderComponent,
-    SearchItemComponent,
-    SearchResultComponent,
-    SearchPipe,
-    FilterComponent,
-    FilterDatePipe,
-    FilterStringPipe,
-    FilterViewsCountPipe,
-    BorderHighlightDirective,*/
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    //MaterialModule,
-    //FormsModule,
     AppRoutingModule,
     CoreModule
   ],
-
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

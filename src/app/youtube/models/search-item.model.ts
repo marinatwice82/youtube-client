@@ -9,5 +9,6 @@ export interface SearchItem {
     dislikeCount: string;
     commentCount: string;
     publishedAt: string;
+    description: string;
 
 }

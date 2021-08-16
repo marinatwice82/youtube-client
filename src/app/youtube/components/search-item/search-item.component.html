@@ -12,7 +12,7 @@
       <mat-card-title>{{item.publishedAt}}</mat-card-title>
     </div>
     <mat-card-actions>
-      <button mat-button>more...</button>
+      <button mat-button [routerLink]="['item', item.id]">more...</button>
     </mat-card-actions>
   </mat-card>
 </ng-container>

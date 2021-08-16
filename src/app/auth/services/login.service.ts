@@ -5,6 +5,7 @@ import { User } from '../models/user.model';
 @Injectable({
     providedIn: 'root'
 })
+
 export class LoginService {
     protected token: string = 'loginToken';
     public user: User = { login: '', password: '' };
@@ -16,6 +17,7 @@ export class LoginService {
     public currentUserName: Observable<string | null> = this.userNamed.asObservable();
 
     constructor() { }
+
     public auth(username: string, password: string): boolean {
 
         if (username !== '' && password !== '') {

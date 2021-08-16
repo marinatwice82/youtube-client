@@ -6,7 +6,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
-
 @NgModule({
   declarations: [],
   imports: [
@@ -26,4 +25,5 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule
   ]
 })
+
 export class SharedModule { }

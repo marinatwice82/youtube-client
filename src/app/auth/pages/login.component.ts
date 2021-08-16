@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
@@ -9,7 +9,8 @@ import { LoginService } from '../services/login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+
+export class LoginComponent {
 
   public login: string = '';
   public password: string = '';
@@ -22,11 +23,9 @@ export class LoginComponent implements OnInit {
   }
 
   public auth(form: NgForm): void {
-    //console.log('ayth ', form.value.login, ' ', form.value.password);
+    //console.log('auth ', form.value.login, ' ', form.value.password);
     this.loginService.auth(form.value.login, form.value.password);
     this.router.navigate(['main']);
   }
 
-  ngOnInit(): void {
-  }
 }

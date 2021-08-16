@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class MainGuard implements CanActivate {
 
     constructor(private router: Router) { }
+
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
         if (this.isLoggedIn()) {
             return true;
@@ -16,6 +17,7 @@ export class MainGuard implements CanActivate {
         this.router.navigate(['login']);
         return false;
     }
+
     public isLoggedIn(): boolean {
         let status: boolean;
         status = false;

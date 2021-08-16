@@ -7,13 +7,14 @@ import { FilterService } from '../../services/filter.service';
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss']
 })
+
 export class FilterComponent {
   public isShow: boolean = false;
 
   constructor(private dataService: DataService, private filterService: FilterService) {
     this.dataService.clickChange.subscribe(show => {
       this.isShow = show;
-      console.log("isShow ", this.isShow);
+      //console.log("isShow ", this.isShow);
     });
   }
 
@@ -26,11 +27,14 @@ export class FilterComponent {
     //this.filterDate.emit();
     this.filterService.filterDate();
   }
+
   onViews() {
     this.filterService.filterView();
   }
 
   onWord(value: string) {
-    this.filterWord.emit(value);
+    console.log('onWord ', value);
+    //this.filterWord.emit(value);
   }
+
 }

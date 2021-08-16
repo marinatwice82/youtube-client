@@ -9,6 +9,7 @@ export class FilterService {
     public viewDirection: boolean = false;
     public dateFiltering: EventEmitter<boolean> = new EventEmitter();
     public viewFiltering: EventEmitter<boolean> = new EventEmitter();
+    public wordFilter: EventEmitter<string> = new EventEmitter();
 
     constructor() { }
 

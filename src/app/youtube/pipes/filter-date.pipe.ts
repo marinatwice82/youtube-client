@@ -4,13 +4,13 @@ import { SearchItem } from '../models/search-item.model';
 @Pipe({
   name: 'filterDate'
 })
+
 export class FilterDatePipe implements PipeTransform {
 
   transform(items: SearchItem[], direction: boolean): SearchItem[] {
     let resArr: SearchItem[] = [];
     if (direction) {
       resArr = items.reverse();
-
     }
     else {
       resArr = items.sort((a, b): number => {
@@ -32,4 +32,5 @@ export class FilterDatePipe implements PipeTransform {
     }
     return resArr;
   }
+
 }

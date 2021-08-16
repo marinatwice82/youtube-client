@@ -9,6 +9,7 @@ import { FilterService } from '../../services/filter.service';
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.scss']
 })
+
 export class SearchResultComponent implements OnInit {
   //@Input() searchString: string = '';
   //@Input() searchClicked: boolean = false;
@@ -27,7 +28,7 @@ export class SearchResultComponent implements OnInit {
     this.dataService.onSearch.subscribe(searchStr => {
       this.searchClicked = true;
       this.searchString = searchStr;
-      console.log('searchString ', this.searchString);
+      //console.log('searchString ', this.searchString);
     });
     this.filterService.dateFiltering.subscribe(dateDirection => {
       this.isFilterDate = dateDirection;
@@ -52,10 +53,12 @@ export class SearchResultComponent implements OnInit {
         likeCount: item.statistics.likeCount,
         dislikeCount: item.statistics.dislikeCount,
         commentCount: item.statistics.commentCount,
-        publishedAt: item.snippet.publishedAt
+        publishedAt: item.snippet.publishedAt,
+        description: item.snippet.description
       });
       //}
     });
+    this.dataService.fillData(this.result);
   }
 
 }

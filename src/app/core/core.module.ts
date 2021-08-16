@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
-
-
+import { Page404Component } from './pages/page404.component';
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    Page404Component
   ],
   imports: [
     RouterModule, FormsModule
@@ -17,4 +17,5 @@ import { HeaderComponent } from './components/header/header.component';
     HeaderComponent
   ]
 })
+
 export class CoreModule { }

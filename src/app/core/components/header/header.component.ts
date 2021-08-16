@@ -10,6 +10,7 @@ import { DataService } from '../../services/data.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
 export class HeaderComponent implements OnInit {
   public show!: boolean;
   public userName: string | undefined = 'Your Name';

@@ -4,6 +4,7 @@ import { SearchItem } from '../models/search-item.model';
 @Pipe({
   name: 'filterString'
 })
+
 export class FilterStringPipe implements PipeTransform {
 
   transform(items: SearchItem[], sortStr: string): SearchItem[] {
