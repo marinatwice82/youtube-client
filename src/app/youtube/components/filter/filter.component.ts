@@ -34,6 +34,7 @@ export class FilterComponent {
 
   onWord(value: string) {
     console.log('onWord ', value);
+    this.filterService.filterWord(value);
     //this.filterWord.emit(value);
   }
 

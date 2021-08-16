@@ -23,5 +23,9 @@ export class FilterService {
         this.viewFiltering.emit(this.viewDirection);
     }
 
+    public filterWord(word: string) {
+        this.wordFilter.emit(word);
+    }
+
 
 }

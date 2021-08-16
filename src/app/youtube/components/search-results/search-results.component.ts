@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/core/services/data.service';
 import { EXP } from '../../../mock-exp-items';
 import { SearchItem } from '../../models/search-item.model';
@@ -15,12 +15,13 @@ export class SearchResultComponent implements OnInit {
   //@Input() searchClicked: boolean = false;
   //@Input() isFilterDate: boolean = false;
   //@Input() isFilterViews: boolean = false;
-  @Input() sortString: string = '';
+  //@Input() sortString: string = '';
 
   public searchString: string = '';
   public searchClicked: boolean = false;
   public isFilterDate: boolean = false;
   public isFilterViews: boolean = false;
+  public sortString: string = '';
 
   result: SearchItem[] = [];
   //result: any[] = EXP;
@@ -36,13 +37,13 @@ export class SearchResultComponent implements OnInit {
     this.filterService.viewFiltering.subscribe(viewDirection => {
       this.isFilterViews = viewDirection;
     });
+    this.filterService.wordFilter.subscribe(word => this.sortString = word);
   }
 
   ngOnInit(): void {
     //console.log('result ', this.result);
     EXP.items.map((item: any) => {
       const str = item.snippet.title;
-      //if (str.toLowerCase().includes(strSearch.toLowerCase())) {
       this.result.push({
         kind: item.kind,
         etag: item.etag,
@@ -56,7 +57,6 @@ export class SearchResultComponent implements OnInit {
         publishedAt: item.snippet.publishedAt,
         description: item.snippet.description
       });
-      //}
     });
     this.dataService.fillData(this.result);
   }

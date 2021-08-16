@@ -12,17 +12,33 @@ import { SearchItem } from '../../models/search-item.model';
 export class DetailedComponent {
   public id: string = '';
   public currentItem!: SearchItem;
+  public color: string = '';
+  public borderColor: string = '';
+  public buttonColor: string = '';
 
   constructor(private activateRoute: ActivatedRoute, private dataService: DataService, private _location: Location, private locationStrategy: LocationStrategy) {
     this.id = activateRoute.snapshot.params['id'];
     //console.log("this.id ", this.id);
     this.currentItem = dataService.getItem(this.id);
     console.log("currentItem ", this.currentItem);
+    this.color = this.getColor();
+    this.borderColor = '5px solid ' + this.color;
   }
 
   public back(): void {
     //this._location.back();
     this.locationStrategy.back();
+  }
+
+  public getColor(): string {
+    let currentDate = new Date();
+    let itemDate = new Date(this.currentItem.publishedAt);
+    let daysLag = Math.ceil(Math.abs(currentDate.getTime() - itemDate.getTime()) / (1000 * 3600 * 24));
+
+    if (daysLag < 7) return 'blue'
+    else if (daysLag < 30 && daysLag > 7) return 'green'
+    else if (daysLag > 30 && daysLag < 180) return 'yellow'
+    else return 'red'
   }
 
 }
