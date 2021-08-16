@@ -1,0 +1,18 @@
+<header>
+    <!--<app-search-results></app-search-results>-->
+    <div class="search">
+        <!--<button class="btn-logo">
+            <div class="triangle"></div>
+        </button>-->
+        <div class="logo"></div>
+        <form class="example-form" #myForm="ngForm" novalidate>
+            <input type="text" name="search" ngModel placeholder="What are you want to find out?" />
+            <button mat-raised-button color="primary" (click)="search(myForm)">search </button>
+        </form>
+        <button class="btn-setting" (click)="openFilter()"></button>
+        <div class="user-name">
+            <p>Your Name</p>
+            <i class="icon-user"></i>
+        </div>
+    </div>
+</header>

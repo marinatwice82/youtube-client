@@ -1,0 +1,31 @@
+import { Component, EventEmitter, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
+
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
+})
+export class HeaderComponent {
+
+  constructor() { }
+
+
+  @Output() clickSearch = new EventEmitter<NgForm>();
+  search(form: NgForm) {
+    this.clickSearch.emit(form);
+  }
+  @Output() clickFilter = new EventEmitter<void>();
+
+  openFilter() {
+    this.clickFilter.emit();
+
+  }
+  /*
+    search(form: NgForm): void{
+      console.log("Click Form ", form.value.search);
+    }
+  */
+
+}
