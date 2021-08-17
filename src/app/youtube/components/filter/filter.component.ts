@@ -14,7 +14,6 @@ export class FilterComponent {
   constructor(private dataService: DataService, private filterService: FilterService) {
     this.dataService.clickChange.subscribe(show => {
       this.isShow = show;
-      //console.log("isShow ", this.isShow);
     });
   }
 
@@ -24,7 +23,6 @@ export class FilterComponent {
   @Output() filterWord = new EventEmitter<string>();
 
   onDate() {
-    //this.filterDate.emit();
     this.filterService.filterDate();
   }
 
@@ -33,9 +31,7 @@ export class FilterComponent {
   }
 
   onWord(value: string) {
-    console.log('onWord ', value);
     this.filterService.filterWord(value);
-    //this.filterWord.emit(value);
   }
 
 }

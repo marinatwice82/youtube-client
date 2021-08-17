@@ -23,7 +23,6 @@ export class LoginComponent {
   }
 
   public auth(form: NgForm): void {
-    //console.log('auth ', form.value.login, ' ', form.value.password);
     this.loginService.auth(form.value.login, form.value.password);
     this.router.navigate(['main']);
   }

@@ -11,11 +11,6 @@ import { FilterService } from '../../services/filter.service';
 })
 
 export class SearchResultComponent implements OnInit {
-  //@Input() searchString: string = '';
-  //@Input() searchClicked: boolean = false;
-  //@Input() isFilterDate: boolean = false;
-  //@Input() isFilterViews: boolean = false;
-  //@Input() sortString: string = '';
 
   public searchString: string = '';
   public searchClicked: boolean = false;
@@ -24,12 +19,10 @@ export class SearchResultComponent implements OnInit {
   public sortString: string = '';
 
   result: SearchItem[] = [];
-  //result: any[] = EXP;
   constructor(private dataService: DataService, private filterService: FilterService) {
     this.dataService.onSearch.subscribe(searchStr => {
       this.searchClicked = true;
       this.searchString = searchStr;
-      //console.log('searchString ', this.searchString);
     });
     this.filterService.dateFiltering.subscribe(dateDirection => {
       this.isFilterDate = dateDirection;
@@ -41,10 +34,9 @@ export class SearchResultComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //console.log('result ', this.result);
-    EXP.items.map((item: any) => {
+    this.result = EXP.items.map((item: any) => {
       const str = item.snippet.title;
-      this.result.push({
+      return {
         kind: item.kind,
         etag: item.etag,
         id: item.id,
@@ -56,7 +48,7 @@ export class SearchResultComponent implements OnInit {
         commentCount: item.statistics.commentCount,
         publishedAt: item.snippet.publishedAt,
         description: item.snippet.description
-      });
+      }
     });
     this.dataService.fillData(this.result);
   }

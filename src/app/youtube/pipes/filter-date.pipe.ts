@@ -8,7 +8,7 @@ import { SearchItem } from '../models/search-item.model';
 export class FilterDatePipe implements PipeTransform {
 
   transform(items: SearchItem[], direction: boolean): SearchItem[] {
-    let resArr: SearchItem[] = [];
+    let resArr: SearchItem[] = [...items];
     if (direction) {
       resArr = items.reverse();
     }

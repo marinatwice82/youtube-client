@@ -24,31 +24,17 @@ export class HeaderComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    //this.loginService.currentLoginState.subscribe((data) => { this.show = data; });
     if (localStorage.getItem('status') === 'loggedin') {
-      //this.show = "true";
       this.userName = localStorage.user;
     }
   }
-  /* @Output() clickSearch = new EventEmitter<NgForm>();
 
-   @Output() clickFilter = new EventEmitter<void>();
-*/
   public search(form: NgForm): void {
     this.dataService.searchClicked(form.value.search);
-    //console.log('search ', form.value.search);
-    //this.clickSearch.emit(form);
   }
   public openFilter(): void {
     this.dataService.onClicked();
 
   }
-
-
-  /*
-    search(form: NgForm): void{
-      console.log("Click Form ", form.value.search);
-    }
-  */
 
 }

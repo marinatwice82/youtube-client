@@ -23,7 +23,6 @@ export class DataService {
 
     public fillData(data: SearchItem[]): void {
         this.dataResult = [...data];
-        console.log('fillData ', this.dataResult);
     }
 
     public getItem(id: string): SearchItem {
