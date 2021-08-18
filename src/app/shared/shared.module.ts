@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { LuxonModule } from "luxon-angular";
 
 @NgModule({
   declarations: [],
@@ -14,14 +15,16 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule,
     MatIconModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    LuxonModule
   ],
   exports: [
     MatButtonModule,
     MatCardModule,
     MatIconModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    LuxonModule
   ]
 })
 

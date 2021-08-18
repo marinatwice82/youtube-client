@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/auth/services/login.service';
 import { DataService } from '../../services/data.service';
-
 
 @Component({
   selector: 'app-header',
@@ -11,10 +10,9 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements DoCheck {
   public show!: boolean;
   public userName: string | undefined = 'Your Name';
-
 
   constructor(private router: Router, private loginService: LoginService, private dataService: DataService) { }
 
@@ -23,9 +21,12 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
-  public ngOnInit(): void {
+  public ngDoCheck(): void {
     if (localStorage.getItem('status') === 'loggedin') {
       this.userName = localStorage.user;
+    }
+    else {
+      this.userName = 'Your Name';
     }
   }
 
