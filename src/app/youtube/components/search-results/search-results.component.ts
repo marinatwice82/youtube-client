@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/core/services/data.service';
-import { EXP } from '../../../mock-exp-items';
 import { SearchItem } from '../../models/search-item.model';
 import { FilterService } from '../../services/filter.service';
 
@@ -22,7 +21,8 @@ export class SearchResultComponent implements OnInit {
   constructor(private dataService: DataService, private filterService: FilterService) {
     this.dataService.onSearch.subscribe(searchStr => {
       this.searchClicked = true;
-      this.searchString = searchStr;
+      //this.searchString = searchStr;
+      this.result = [...searchStr];
     });
     this.filterService.dateFiltering.subscribe(dateDirection => {
       this.isFilterDate = dateDirection;
@@ -34,6 +34,7 @@ export class SearchResultComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    /*
     this.result = EXP.items.map((item: any) => {
       const str = item.snippet.title;
       return {
@@ -50,7 +51,8 @@ export class SearchResultComponent implements OnInit {
         description: item.snippet.description
       }
     });
-    this.dataService.fillData(this.result);
+    */
+    //this.dataService.fillData(this.result);
   }
 
 }

@@ -2,7 +2,8 @@
     <div class="search">
         <div class="logo"></div>
         <form class="example-form" #myForm="ngForm" novalidate>
-            <input type="text" name="search" ngModel placeholder="What are you want to find out?" />
+            <input matInput type="text" name="search" [formControl]="searchStr"
+                placeholder="What are you want to find out?" />
             <button mat-raised-button color="primary" (click)="search(myForm)">search </button>
         </form>
         <button class="btn-setting" (click)="openFilter()"></button>
