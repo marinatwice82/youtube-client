@@ -1,0 +1,7 @@
+<section class="main">
+    <ng-container *ngIf="searchClicked">
+        <app-search-item
+            *ngFor="let item of result | search : searchString | filterDate : isFilterDate | filterViewsCount : isFilterViews | filterString : sortString"
+            [item]="item" [publishedAt]="item.publishedAt" appBorderHighlight></app-search-item>
+    </ng-container>
+</section>
