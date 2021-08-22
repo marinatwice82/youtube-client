@@ -32,7 +32,7 @@ export class DataService {
     public searchClicked(searchStr: string): void {
         this.listUrl =
             'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q='
-            + searchStr + '&type=video&key=' + this.userApi;
+            + searchStr + '&type=video'/*&key=' /*+ this.userApi*/;
 
         this.httpClient.get(this.listUrl)
             .pipe(
@@ -49,7 +49,7 @@ export class DataService {
 
         this.listUrl =
             'https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id='
-            + newData + '&key=' + this.userApi;
+            + newData /*+ '&key=' + this.userApi*/;
 
         this.httpClient.get(this.listUrl)
             .pipe(
