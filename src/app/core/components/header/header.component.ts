@@ -33,14 +33,14 @@ export class HeaderComponent implements DoCheck, OnInit {
   }
 
   public ngOnInit() {
-    this.searchStr.valueChanges.pipe(debounceTime(300), filter((val: string) => (val.length > 3)))
+    this.searchStr.valueChanges.pipe(debounceTime(300), filter((val: string) => (val.length >= 3)))
       .subscribe(queryField => { this.dataService.searchClicked(queryField); });
-
   }
 
   public search(form: NgForm): void {
     this.dataService.searchClicked(form.value.search);
   }
+
   public openFilter(): void {
     this.dataService.onClicked();
 

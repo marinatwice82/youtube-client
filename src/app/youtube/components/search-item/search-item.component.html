@@ -9,7 +9,7 @@
         <div><img src="./assets/сomments.svg" alt="icon" /><span>{{item.commentCount}}</span></div>
       </mat-card-content>
       <mat-card-title>{{item.title}}</mat-card-title>
-      <mat-card-title>{{item.publishedAt}}</mat-card-title>
+      <mat-card-title>{{item.publishedAt | date}}</mat-card-title>
     </div>
     <mat-card-actions>
       <button mat-button [routerLink]="['item', item.id]">more...</button>

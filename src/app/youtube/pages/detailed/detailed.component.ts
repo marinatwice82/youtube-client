@@ -24,7 +24,7 @@ export class DetailedComponent {
   }
 
   public back(): void {
-    this.locationStrategy.back();
+    this._location.back();
   }
 
   public getColor(): string {

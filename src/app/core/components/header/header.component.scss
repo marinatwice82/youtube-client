@@ -31,26 +31,12 @@
         display: flex;
         flex-direction: row;
             input{
-                width: 82%;
+                width: 100%;
                 height: 24px;
                 border: none;
                 &:focus {
                     outline:none;
                 }
-            }
-            button {
-                width: 18%;
-                height: 28px;
-                display: flex;
-                align-items: center;
-                border-radius: 0 5px 5px 0;
-                background-color: #2F80ED;
-                color: white;
-                border: none;
-                    &:hover {
-                        background: #5EA2FF;
-                        cursor: pointer;
-                    }
             }
     }
 

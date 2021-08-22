@@ -21,7 +21,6 @@ export class SearchResultComponent implements OnInit {
   constructor(private dataService: DataService, private filterService: FilterService) {
     this.dataService.onSearch.subscribe(searchStr => {
       this.searchClicked = true;
-      //this.searchString = searchStr;
       this.result = [...searchStr];
     });
     this.filterService.dateFiltering.subscribe(dateDirection => {
@@ -34,25 +33,12 @@ export class SearchResultComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /*
-    this.result = EXP.items.map((item: any) => {
-      const str = item.snippet.title;
-      return {
-        kind: item.kind,
-        etag: item.etag,
-        id: item.id,
-        title: item.snippet.title,
-        img: item.snippet.thumbnails.standard.url,
-        viewCount: item.statistics.viewCount,
-        likeCount: item.statistics.likeCount,
-        dislikeCount: item.statistics.dislikeCount,
-        commentCount: item.statistics.commentCount,
-        publishedAt: item.snippet.publishedAt,
-        description: item.snippet.description
+    this.dataService.currentData.subscribe(data => {
+      if (data?.length != 0) {
+        this.searchClicked = true;
+        this.result = data;
       }
     });
-    */
-    //this.dataService.fillData(this.result);
   }
 
 }
