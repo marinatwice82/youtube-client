@@ -4,12 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchInterceptor } from './interceptors/search.interceptor';
-import { Page404Component } from './pages/page404.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { Page404Component } from './pages/page404/page404.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    Page404Component
+    Page404Component,
+    AdminComponent
   ],
   imports: [
     RouterModule, FormsModule, HttpClientModule, ReactiveFormsModule
