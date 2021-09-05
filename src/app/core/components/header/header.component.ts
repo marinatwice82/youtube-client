@@ -15,6 +15,7 @@ export class HeaderComponent implements DoCheck, OnInit {
   public show!: boolean;
   public userName: string | undefined = 'Your Name';
   public searchStr: FormControl = new FormControl('');
+  public log: string = "LogIn";
 
   constructor(private router: Router, private loginService: LoginService, private dataService: DataService) { }
 
@@ -35,6 +36,7 @@ export class HeaderComponent implements DoCheck, OnInit {
   public ngOnInit() {
     this.searchStr.valueChanges.pipe(debounceTime(300), filter((val: string) => (val.length >= 3)))
       .subscribe(queryField => { this.dataService.searchClicked(queryField); });
+    this.loginService.logined.subscribe((logined) => this.log = logined ? "LogOut" : "LogIn");
   }
 
   public search(form: NgForm): void {
