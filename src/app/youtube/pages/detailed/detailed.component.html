@@ -1,0 +1,20 @@
+<button [style.background]='color' (click)="back()"><b>&#60;</b></button>
+<mat-card>
+    <img src={{currentItem.img}} alt="Photo of a Shiba Inu">
+    <mat-card-content class="detailed-color" [style.borderBottom]='borderColor'>
+        <mat-card-header>
+            <mat-card-title>{{currentItem.title}}</mat-card-title>
+            <mat-card-subtitle>{{currentItem.publishedAt | date: 'fullDate' }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="detailed-description-title">Description:</p>
+            <mat-card-subtitle class="detailed-description-text">{{currentItem.description}}</mat-card-subtitle>
+        </mat-card-content>
+        <mat-card-footer>
+            <div><img src="./assets/viewed.svg" alt="icon" /><span>{{currentItem.viewCount}}</span></div>
+            <div><img src="./assets/liked.svg" alt="icon" /><span>{{currentItem.likeCount}}</span></div>
+            <div><img src="./assets/dislike.svg" alt="icon" /><span>{{currentItem.dislikeCount}}</span></div>
+            <div><img src="./assets/сomments.svg" alt="icon" /><span>{{currentItem.commentCount}}</span></div>
+        </mat-card-footer>
+    </mat-card-content>
+</mat-card>
