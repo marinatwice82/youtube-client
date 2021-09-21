@@ -1,0 +1,70 @@
+.admin-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+  }
+
+  .admin-form {
+    background: #f2f2f2;
+    border-radius: 10px;
+    padding: 30px 20px 20px;
+  }
+
+  .admin-h1 {
+    font-size: 23px;
+    line-height: 26px;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .admin-label {
+    display: block;
+    font-size: 13px;
+    line-height: 15px;
+    color: #828282;
+    margin-bottom: 7px;
+  }
+
+  .admin-input {
+    width: 100%;
+    height: 45px;
+    background: #e0e0e0;
+    border: 0;
+    margin-bottom: 7px;
+  }
+
+  .admin-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 38px;
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 6px;
+    background: #2F80ED;
+    font-size: 15px;
+    line-height: 17px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .card-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 32px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 14px;
+    background-color: #2F80ED;
+    color: #fff;
+    margin: 20px auto;
+    cursor: pointer;
+  }
