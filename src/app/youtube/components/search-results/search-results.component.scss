@@ -1,0 +1,11 @@
+:host {
+    display: flex;
+    justify-content: center;
+
+    .main {
+        width: 1440px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+}

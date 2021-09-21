@@ -1,0 +1,15 @@
+<header>
+    <div class="search">
+        <div class="logo"></div>
+        <form class="example-form" #myForm="ngForm" novalidate>
+            <input matInput type="text" name="search" [formControl]="searchStr"
+                placeholder="What are you want to find out?" />
+        </form>
+        <button class="btn-setting" (click)="openFilter()"></button>
+        <div class="user-name">
+            <p>{{userName}}</p>
+            <i class="icon-user"></i>
+            <button mat-raised-button (click)="logout()">{{log}}</button>
+        </div>
+    </div>
+</header>

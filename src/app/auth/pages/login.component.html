@@ -1,0 +1,14 @@
+<mat-card>
+    <form #authForm="ngForm" novalidate>
+        <mat-card-title>Login</mat-card-title>
+        <mat-form-field>
+            <mat-label>Login</mat-label>
+            <input matInput type="text" name="login" ngModel placeholder="Login" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" name="password" ngModel placeholder="Password" required>
+        </mat-form-field>
+        <button type="button" (click)="auth(authForm)" class="btn-login">Login</button>
+    </form>
+</mat-card>
